@@ -1,0 +1,181 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%-- JSTL 코어 태그 라이브러리 사용 선언 --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculator Practice</title>
+<style>
+    /* 전체 페이지 배경 */
+    body { font-family: Arial, sans-serif; background: #f0f0f0; }
+
+    /* 계산기 전체 박스 - 가운데 정렬, 흰 배경 */
+    .calculator {
+        width: 320px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 12px;
+        background: white;
+        border: 1px solid #ddd;
+    }
+
+    /* 결과 표시창 - 오른쪽 정렬, 읽기 전용 */
+    .display {
+        width: 100%;
+        height: 60px;
+        margin-bottom: 15px;
+        padding: 10px;
+        font-size: 24px;
+        text-align: right;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-sizing: border-box;
+        background: #f9f9f9;
+    }
+
+    /* 버튼 4열 그리드 레이아웃 */
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+
+    /* 기본 버튼 - 흰 배경, 회색 테두리 */
+    .grid button {
+        height: 55px;
+        font-size: 18px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #fff;
+        cursor: pointer;
+    }
+    /* 버튼 hover 효과 */
+    .grid button:hover { background: #f0f0f0; }
+
+    /* 연산자 버튼 (+, -, *, /) - 회색 배경 */
+    .operator { background: #e0e0e0 !important; }
+    /* = 버튼 - 검정 배경, 흰 글씨 */
+    .equal    { background: #333 !important; color: white !important; }
+    /* C 버튼 - 빨간 글씨로 강조 */
+    .clear    { color: #e53935 !important; font-weight: bold; }
+
+    /* 홈으로 링크 */
+    .home-link { display: block; margin-top: 15px; text-align: center; color: #888; font-size: 13px; }
+    /* 에러 메시지 (0으로 나누기 등) */
+    .error { color: #e53935; margin-top: 10px; text-align: center; font-size: 13px; }
+</style>
+<script>
+    /**
+     * 숫자/소수점 버튼 클릭 시 호출
+     * 연산자가 없으면 num1에, 있으면 num2에 값 누적
+     */
+    function appendValue(value) {
+        const op = document.getElementById("operator").value;
+        if (op === "") {
+            document.getElementById("num1").value += value;
+        } else {
+            document.getElementById("num2").value += value;
+        }
+    }
+
+    /**
+     * 연산자 버튼 클릭 시 호출
+     * hidden input에 선택한 연산자 저장
+     */
+    function setOperator(op) {
+        document.getElementById("operator").value = op;
+    }
+
+    /**
+     * C 버튼 - 모든 입력값 초기화
+     */
+    function clearCalc() {
+        document.getElementById("num1").value = "";
+        document.getElementById("num2").value = "";
+        document.getElementById("operator").value = "";
+        document.getElementById("displayText").value = "";
+    }
+
+    /**
+     * 화면 표시창 업데이트
+     * 예: "10 + 5" 형태로 표시
+     */
+    function updateDisplay() {
+        const n1 = document.getElementById("num1").value;
+        const n2 = document.getElementById("num2").value;
+        const op = document.getElementById("operator").value;
+        document.getElementById("displayText").value = n1 + " " + op + " " + n2;
+    }
+
+    /* 숫자 입력 후 화면 갱신 */
+    function appendAndRefresh(value) { appendValue(value); updateDisplay(); }
+    /* 연산자 입력 후 화면 갱신 */
+    function setOpAndRefresh(op)     { setOperator(op);    updateDisplay(); }
+</script>
+</head>
+<body>
+<div class="calculator">
+
+    <%-- POST 방식으로 /calc 에 데이터 전송 --%>
+    <form action="calc" method="post">
+
+        <%-- 서버로 전달할 값들 (hidden input) - 화면에 보이지 않음 --%>
+        <input type="hidden" id="num1"     name="num1"     value="${num1}">
+        <input type="hidden" id="num2"     name="num2"     value="${num2}">
+        <input type="hidden" id="operator" name="operator" value="${operator}">
+
+        <%-- 결과가 있으면 결과 표시, 없으면 현재 입력값 표시 --%>
+        <c:choose>
+            <c:when test="${not empty result}">
+                <%-- 계산 완료 후: "결과: 15.0" 형태로 표시 --%>
+                <input type="text" class="display" id="displayText"
+                       value="결과: ${result}" readonly>
+            </c:when>
+            <c:otherwise>
+                <%-- 입력 중: "10 + 5" 형태로 표시 --%>
+                <input type="text" class="display" id="displayText"
+                       value="${num1} ${operator} ${num2}" readonly>
+            </c:otherwise>
+        </c:choose>
+
+        <%-- 버튼 그리드 영역 --%>
+        <div class="grid">
+            <%-- 7, 8, 9, + --%>
+            <button type="button" onclick="appendAndRefresh('7')">7</button>
+            <button type="button" onclick="appendAndRefresh('8')">8</button>
+            <button type="button" onclick="appendAndRefresh('9')">9</button>
+            <button type="button" class="operator" onclick="setOpAndRefresh('+')">+</button>
+
+            <%-- 4, 5, 6, - --%>
+            <button type="button" onclick="appendAndRefresh('4')">4</button>
+            <button type="button" onclick="appendAndRefresh('5')">5</button>
+            <button type="button" onclick="appendAndRefresh('6')">6</button>
+            <button type="button" class="operator" onclick="setOpAndRefresh('-')">-</button>
+
+            <%-- 1, 2, 3, * --%>
+            <button type="button" onclick="appendAndRefresh('1')">1</button>
+            <button type="button" onclick="appendAndRefresh('2')">2</button>
+            <button type="button" onclick="appendAndRefresh('3')">3</button>
+            <button type="button" class="operator" onclick="setOpAndRefresh('*')">*</button>
+
+            <%-- 0, ., C, / --%>
+            <button type="button" onclick="appendAndRefresh('0')">0</button>
+            <button type="button" onclick="appendAndRefresh('.')">.</button>
+            <button type="button" class="clear"    onclick="clearCalc()">C</button>
+            <button type="button" class="operator" onclick="setOpAndRefresh('/')">/</button>
+
+            <%-- = 버튼: form submit → Controller POST 호출 --%>
+            <button type="submit" class="equal" style="grid-column: span 4;">=</button>
+        </div>
+    </form>
+
+    <%-- 에러 메시지 (0으로 나누기 등) --%>
+    <c:if test="${not empty error}">
+        <p class="error">${error}</p>
+    </c:if>
+
+    <%-- 홈으로 링크 --%>
+    <a class="home-link" href="<c:url value='/' />">홈으로</a>
+
+</div>
+</body>
+</html>

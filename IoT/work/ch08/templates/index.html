@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Home IoT</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <script>
+        function led_on() {
+            fetch("/led/on")
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                let result = document.querySelector("#result");
+                if(data == "ok") {
+                    result.innerHTML = "<h3>LED is on!</h3>";
+                }
+                else {
+                    result.innerHTML = "<h3>error!</h3>";
+                }
+            });
+        }
+        function led_off() {
+            fetch("/led/off")
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                let result = document.querySelector("#result");
+                if(data == "ok") {
+                    result.innerHTML = "<h3>LED is off!</h3>";
+                }
+                else {
+                    result.innerHTML = "<h3>error!</h3>";
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+            <h2>Home IoT</h2>
+        </div>
+        <div class="class="main">
+            <div>
+                <button onclick="led_on()">LED ON</button>
+                <button onclick="led_off()">LED OFF</button>
+            </div>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+</body>
+</html>

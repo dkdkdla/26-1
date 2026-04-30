@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Server>
+	<Service name="Catalina">
+		<add:Connector executor="tomcatThreadPool"
+				port="${http.port:8009}"
+				protocol="org.apache.coyote.ajp.AjpNioProtocol"
+				connectionTimeout="20000"
+				redirectPort="${https.port:8443}"
+				secretRequired="${secret.required:false}"
+				secret="${secret:EMPTY}"
+				address="${address:EMPTY}"
+				allowedRequestAttributesPattern="${allowed.request.attributes.pattern:null}"
+				acceptCount="100"/>
+	</Service>
+</Server>

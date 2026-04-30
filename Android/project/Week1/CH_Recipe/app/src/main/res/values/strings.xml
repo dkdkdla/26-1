@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Recipe Example</string>
+    <string name="recipe_text">1. Form ground beef into a patty and season it.\n2. Cook the patty on a hot pan or grill.\n3. Lightly toast the hamburger buns.\n4. Assemble the burger with patty, cheese, lettuce, and tomato.</string>
+    <string name="action_settings">Settings</string>
+</resources>

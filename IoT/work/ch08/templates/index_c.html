@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Home IoT</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+            <h2>Home IoT</h2>
+        </div>
+        <div class="main">
+            <div>
+                <form action="/ledcontrol" method="post">
+                    <input type="hidden" name="led" value="red" />
+                    RED LED
+                    <button name="status" value="on">ON</button>
+                    <button name="status" value="off">OFF</button>
+                </form>
+                <form action="/ledcontrol" method="post">
+                    <input type="hidden" name="led" value="blue" />
+                    BLUE LED
+                    <button name="status" value="on">ON</button>
+                    <button name="status" value="off">OFF</button>
+                </form>
+            </div>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+</body>
+</html>

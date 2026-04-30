@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Tue Apr 14 17:32:27 KST 2026
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\user\\.m2\\repository\\org\\springframework\\spring-web\\5.2.9.RELEASE\\spring-web-5.2.9.RELEASE.jar=C\:\\26-1\\JSP\\springSTS\\download\\apache-tomcat-9.0.73\\apache-tomcat-9.0.73\\wtpwebapps\\LegacyTemplatePjt\\WEB-INF\\lib\\spring-web-5.2.9.RELEASE.jar
+org.eclipse.jst.jee.server\:LegacyTemplatePjt=C\:\\26-1\\JSP\\springSTS\\download\\apache-tomcat-9.0.73\\apache-tomcat-9.0.73\\wtpwebapps\\LegacyTemplatePjt

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LED Controller</title>
+    <meta name="viewpoint" content="width=device-width initial-scale=1">
+</head>
+<body>
+    <h2>LED Controller</h2>
+    <hr>
+    <div style="padding-left:20px;">
+        <h3>개별 LED 제어</h3>
+        <p>
+            <b>적색 LED : </b>
+            {% if led_states['red']==1 %} on
+            {% else %} off
+            {% endif %}
+            <a href="{{url_for('ledControl', color='red', state=1) }}"><button>On</button></a>
+            <a href="{{url_for('ledControl', color='red', state=0) }}"><button>Off</button></a>
+        </p>
+        <p>
+            <b>녹색 LED : </b>
+            {% if led_states['green']==1 %} on
+            {% else %} off
+            {% endif %}
+            <a href="{{url_for('ledControl', color='green', state=1) }}"><button>On</button></a>
+            <a href="{{url_for('ledControl', color='green', state=0) }}"><button>Off</button></a>
+        </p>
+        <p>
+            <b>청색 LED : </b>
+            {% if led_states['blue']==1 %} on
+            {% else %} off
+            {% endif %}
+            <a href="{{url_for('ledControl', color='blue', state=1) }}"><button>On</button></a>
+            <a href="{{url_for('ledControl', color='blue', state=0) }}"><button>Off</button></a>
+        </p>
+    </div>
+    <h3>전체 LED 동시 제어</h3>
+    <div style="padding-left:20px;">
+        <p>
+            <b>전체 LED : </b>
+            {% if (led_states['red']==1 and led_states['green']==1 and led_states['blue']==1) %} on
+            {% else %} off
+            {% endif %}
+            <a href="{{url_for('allOnOff', state=1) }}"><button>On</button></a>
+            <a href="{{url_for('allOnOff', state=0) }}"><button>Off</button></a>
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<meta http-equiv="refresh" content="2">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pushbutton Monitor</title>
+</head>
+<body>
+    <h2>Pushbutton Monitor</h2>
+    <hr>
+    <h3>개별 LED 상태 모니터링</h3>
+    <div style="padding-left:20px;">
+        <p>
+            <b>적색 LED : {% if led_states['red']==1 %} 켜짐
+                        {% else %}꺼짐
+                        {% endif %}
+            </b>
+        </p>
+        <p>
+            <b>녹색 LED : {% if led_states['green']==1 %} 켜짐
+                        {% else %}꺼짐
+                        {% endif %}
+            </b>
+        </p>
+        <p>
+            <b>청색 LED : {% if led_states['blue']==1 %} 켜짐
+                        {% else %}꺼짐
+                        {% endif %}
+            </b>
+        </p>
+    </div>
+</body>
+</html>

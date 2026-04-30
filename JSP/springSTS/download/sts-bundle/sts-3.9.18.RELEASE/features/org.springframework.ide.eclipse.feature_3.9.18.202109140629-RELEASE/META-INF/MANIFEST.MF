@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Created-By: Apache Maven 3.6.3
+Built-By: bamboo
+Build-Jdk: 11.0.11
+Source-Control-Identifier: de6965c78457408fe0ba1cd642e495be192a8361
+
+Name: epl-v10.html
+SHA-256-Digest: T9ZK7tNA1ipkqNpLNx7+D20NdF9NLb76y6hsZG02vHI=
+
+Name: feature.xml
+SHA-256-Digest: Y852TsAPp+E6DhyHHmbt+8dXP7QLD9iVzPVRU6zngxI=
+
+Name: feature.properties
+SHA-256-Digest: Z/1N2LTBt73aFllbXWB+20sMw9L5deF4+NxrV/UChYI=
+

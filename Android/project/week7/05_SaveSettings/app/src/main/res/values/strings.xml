@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SaveSettings</string>
+
+    <string-array name="sex">
+        <item>남</item>
+        <item>여</item>
+    </string-array>
+
+    <string-array name="region">
+        <item>서울</item>
+        <item>경기</item>
+        <item>충청</item>
+        <item>강원</item>
+        <item>경상</item>
+        <item>전라</item>
+        <item>제주</item>
+    </string-array>
+</resources>

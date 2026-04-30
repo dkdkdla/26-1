@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#81C784"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tv_question3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="안드로이드 앱의 UI 레이아웃을 설계할 때 주로 사용하는 마크업 언어는?"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_marginTop="30dp"
+        android:gravity="center"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_question3"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp">
+        <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HTML"/>
+        <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="XML"/>
+        <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="JSON"/>
+        <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Markdown"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="처음으로"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"/>
+</RelativeLayout>

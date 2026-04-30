@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>computer eng Server</title>
+</head>
+<body>
+<%
+    int degree = 3;
+%>
+JSP 수업 대상: <%=degree %>학년 재학생 입니다.
+<br />
+<hr>
+<p> 입력한 문자열을 출력 </p>
+<form id="form1">
+이름: <input type="text" name="fname" value=""> <br />
+학과: <input type="text" name="fhak" value=""> <br />
+</form>
+<button onclick="getFormvalue()"> 출력 </button>
+<p id="demo"> 출력결과는 다음과 같습니다.</p>
+
+<script>
+function getFormvalue(){
+    var x = document.getElementById("form1");
+    let s="";
+    for(var i=0; i<x.length; i++){
+        if(x.elements[i].value != 'submit'){
+            s += x.elements[i].value + "<br>";
+        }
+    }
+    document.getElementById("demo").innerHTML=s;
+}
+</script>
+
+</body>
+</html>

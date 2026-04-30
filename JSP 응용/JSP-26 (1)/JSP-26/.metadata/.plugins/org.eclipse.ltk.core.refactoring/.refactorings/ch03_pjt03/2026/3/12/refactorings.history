@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ch03_pjt03.CalMin&apos; to &apos;CalSub&apos;&#x0D;&#x0A;- Original project: &apos;ch03_pjt03&apos;&#x0D;&#x0A;- Original element: &apos;ch03_pjt03.CalMin&apos;&#x0D;&#x0A;- Renamed element: &apos;ch03_pjt03.CalSub&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;CalMin&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;ch03_pjt03{CalMin.java[CalMin" matchStrategy="1" name="CalSub" qualified="false" references="true" similarDeclarations="false" stamp="1773730838025" textual="false" version="1.0"/>
+</session>

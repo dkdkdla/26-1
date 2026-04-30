@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">요리법 예제</string>
+    <string name="recipe_text">1. 밥 위에 볶은 고사리, 콩나물, 당근, 시금치 등 각종 나물을 얹는다.\n2. 기호에 맞게 볶은 소고기 다짐육이나 육회를 추가한다.\n3. 한가운데에 계란 프라이를 올리고 고추장과 참기름을 적당량 두른다.\n4. 모든 재료가 잘 어우러지도록 골고루 비벼서 완성한다.</string>    <string name="action_settings">환경설정</string>
+</resources>

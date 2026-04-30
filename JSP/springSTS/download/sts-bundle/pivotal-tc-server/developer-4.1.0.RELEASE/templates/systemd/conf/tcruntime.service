@@ -1,0 +1,14 @@
+[Unit]
+Description=tc Runtime Instance ${instance.name}
+After=network.target
+
+[Service]
+User=${runtime.user:tcserver}
+Type=forking
+WorkingDirectory=${installation.directory}
+ExecStart=${installation.directory}/tcserver start ${instance.name} -i ${instances.directory}
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
+
