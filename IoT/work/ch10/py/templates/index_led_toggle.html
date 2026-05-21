@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Flask 웹서버를 이용하여 NodeMCU의 LED 제어</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>실시간 모니터링</h1>
+    <hr />
+    <h2>LED 제어</h2>
+    LED 상태 :
+    {% if led_state == 1 %} on
+    {% else %} off
+    {% endif %}
+    <form action="/ledtoggle" method="post">
+        <input type="submit" value="On/Off" />
+    </form>
+</body>
+</html>

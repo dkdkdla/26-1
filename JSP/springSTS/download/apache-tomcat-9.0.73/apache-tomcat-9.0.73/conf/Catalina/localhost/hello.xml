@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context docBase="C:\26-1\JSP\springSTS\download\apache-tomcat-9.0.73\apache-tomcat-9.0.73\wtpwebapps\LegacyTemplatePjt" path="/hello" reloadable="true" source="org.eclipse.jst.jee.server:LegacyTemplatePjt"/>
+<Context docBase="C:\26-1\JSP\springSTS\download\apache-tomcat-9.0.73\apache-tomcat-9.0.73\wtpwebapps\ch10-pjt-test01" path="/hello" reloadable="true" source="org.eclipse.jst.jee.server:ch10-pjt-test01"/>
