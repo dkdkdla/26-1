@@ -2,4 +2,6 @@
 *.exe
 *.pptx
 *.zip
+*.docx
+*.pdf
 spring-tool-suite*
