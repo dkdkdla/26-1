@@ -1,6 +1,8 @@
 INDEX VERSION 1.131
 C:\26-1\JSP\springSTS\project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3423649275.index
 \LegacyTemplatePjt\src\main\java
+C:\26-1\JSP\springSTS\project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2044303916.index
+\ch13-pjt-test01\src\main\java
 C:\26-1\JSP\springSTS\project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1105334623.index
 \ch10-pjt-test01\src\main\java
 C:\26-1\JSP\springSTS\project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\156755635.index

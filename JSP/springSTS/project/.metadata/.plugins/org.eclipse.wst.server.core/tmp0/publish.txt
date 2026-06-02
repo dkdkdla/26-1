@@ -1,4 +1,5 @@
 #Tomcat publish data
-#Tue May 12 22:44:55 KST 2026
+#Tue Jun 02 23:56:00 KST 2026
 org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\user\\.m2\\repository\\org\\springframework\\spring-web\\5.2.9.RELEASE\\spring-web-5.2.9.RELEASE.jar=C\:\\26-1\\JSP\\springSTS\\download\\apache-tomcat-9.0.73\\apache-tomcat-9.0.73\\wtpwebapps\\LegacyTemplatePjt\\WEB-INF\\lib\\spring-web-5.2.9.RELEASE.jar
-org.eclipse.jst.jee.server\:ch10-pjt-test01=C\:\\26-1\\JSP\\springSTS\\download\\apache-tomcat-9.0.73\\apache-tomcat-9.0.73\\wtpwebapps\\ch10-pjt-test01
+org.eclipse.jst.jee.server\:ch13-pjt-test01=C\:\\26-1\\JSP\\springSTS\\download\\apache-tomcat-9.0.73\\apache-tomcat-9.0.73\\wtpwebapps\\ch13-pjt-test01
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\user\\.m2\\repository\\org\\springframework\\spring-web\\5.3.20\\spring-web-5.3.20.jar=C\:\\26-1\\JSP\\springSTS\\download\\apache-tomcat-9.0.73\\apache-tomcat-9.0.73\\wtpwebapps\\ch13-pjt-test01\\WEB-INF\\lib\\spring-web-5.3.20.jar
