@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="ch13-pjt-test2"/>
 <aop-project name="ch10-pjt-test01"/>
-<aop-project name="ch13-pjt-test01"/>
 </aop-reference-model>
